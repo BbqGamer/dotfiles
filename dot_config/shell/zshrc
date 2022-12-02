@@ -8,10 +8,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-#
-alias open=xdg-open
-alias pman='f() { python3 -c "help($1)" };f'
-alias calc='speedcrunch'
-alias cls='clear'
-alias lf='lfrun'
 
+#ACTIVATE SHORTCUTS
+source $HOME/.config/shell/aliasrc

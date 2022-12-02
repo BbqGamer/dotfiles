@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#Simple aliases
+alias open=xdg-open
+alias pman='f() { python3 -c "help($1)" };f'
+alias calc='speedcrunch'
+alias cls='clear'
+alias lf='lfrun'
+
+#Activate coloring wherever you can
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+
+
+#Directory shortcuts
+alias \
+	books="cd ~/Documents/books" \
+	s="cd ~/studies/eRASMUS/SUBJECTS"
+
+#File shortcuts
+alias \
+	al="vim ~/.config/shell/aliasrc" 
