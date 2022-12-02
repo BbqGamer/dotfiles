@@ -1,0 +1,7 @@
+[user]
+	email = korba.adam@gmail.com
+	name = BbqGamer
+[core]
+	editor = vim
+[credential]
+	helper = cache

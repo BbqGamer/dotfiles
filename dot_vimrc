@@ -1,0 +1,9 @@
+" allow yanking to and pasting from clipboard
+vnoremap <C-c> "+y
+map <C-v> "+P
+
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
+syntax on
