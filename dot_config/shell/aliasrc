@@ -7,6 +7,14 @@ alias calc='speedcrunch'
 alias cls='clear'
 alias lf='lfrun'
 
+#Sudo not required for the following commands
+alias \
+	pacman="sudo pacman" \
+	shutdown="sudo shutdown" \
+	reboot="sudo reboot" \
+	mount="sudo mount" \
+	umount="sudo umount" 
+
 #Activate coloring wherever you can
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
@@ -25,3 +33,4 @@ alias \
 #File shortcuts
 alias \
 	al="vim ~/.config/shell/aliasrc" \
+
