@@ -19,8 +19,9 @@ alias \
 #Directory shortcuts
 alias \
 	books="cd ~/Documents/books" \
-	s="cd ~/studies/eRASMUS/SUBJECTS"
+	s="cd ~/studies/eRASMUS/SUBJECTS" \
+	aoc="cd ~/dev/repos/advent_of_code/2022" \
 
 #File shortcuts
 alias \
-	al="vim ~/.config/shell/aliasrc" 
+	al="vim ~/.config/shell/aliasrc" \
