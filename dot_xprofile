@@ -1,5 +1,0 @@
-xcompmgr -c &
-dwmblocks &
-nitrogen --restore &
-copyq &
-nextcloud --background &
