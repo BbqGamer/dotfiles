@@ -1,0 +1,10 @@
+# Use powerline
+USE_POWERLINE="true"
+
+if [[ -e $HOME/.config/shell/zsh-config ]]; then
+  source $HOME/.config/shell/zsh-config
+fi
+
+if [[ -e $HOME/.config/shell/zsh-prompt ]]; then
+  source $HOME/.config/shell/zsh-prompt
+fi
