@@ -22,6 +22,7 @@ window {
 
 #text:selected {
 	color: #333333;
+	background: rgba(0,0,0,0);
 }
 
 #input {
@@ -33,4 +34,5 @@ window {
 image {
 	margin-left: .25em;
 	margin-right: .25em;
+	background: rgba(0, 0, 0, 0);
 }
