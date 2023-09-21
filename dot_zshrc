@@ -18,6 +18,9 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-R
 
+# Enable vi key bindings
+bindkey -v
+
 # Ctrl+Arrows navigation
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
