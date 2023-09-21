@@ -1,0 +1,19 @@
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioMicMute exec amixer set Capture toggle
+
+# Brightnes control (requires brighnessctl)
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+# Screenshots (requires grim, slurp and wl-clipboard)
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+
+# Personal
+bindsym $mod+n exec alacritty -e vim ~/notes/journal/$(date +%Y-%m-%d).md
+bindsym $mod+x exec window_switcher
+bindsym $mod+p exec vpn
+
+bindsym Mod1+tab workspace back_and_forth
