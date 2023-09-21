@@ -66,8 +66,9 @@ exec swayidle -w \
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input * {
-	xkb_layout "pl"
+input type:keyboard {
+	xkb_layout pl,es
+	xkb_options grp:rctrl_toggle
 }
 
 ### Key bindings
@@ -248,7 +249,7 @@ set $aurora_green #a3be8c
 set $aurora_pink #b48ead
 
 # class                 border	backgr.	text	indica.	child_border
-client.focused		$polar_light  $frost_4  $storm_light $aurora_green $frost_4
+client.focused		$polar_light  $frost_4  $storm_light $frost_4 $frost_4
 client.focused_inactive	$polar_light $polar #888888 #000000 #000000
 client.unfocused	$polar_light $polar #ffffff #000000 #000000
 client.urgent		#ffffff #ffffff #000000 #ffffff #ffffff
