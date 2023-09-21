@@ -2,7 +2,7 @@
     border: none;
     border-radius: 4px;
     font-family: "RobotoMono Nerd Font", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -69,9 +69,10 @@ window#waybar.chromium {
 #mode,
 #idle_inhibitor,
 #wireplumber,
+#bluetooth,
 #mpd {
     padding: 0 10px;
-    margin: 6px 3px; 
+    margin: 6px 2px; 
     color: #333333;
 }
 
@@ -98,14 +99,30 @@ window#waybar.chromium {
     background-color: #bbccdd;
 }
 
+#bluetooth.off,
+#bluetooth.disabled {
+    background-color: #4c566a;	
+}
+
+#bluetooth.on,
+#bluetooth.discoverable,
+#bluetooth.pairable,
+#bluetooth.discovering {
+    background-color: #88c0d0;
+}
+
+#bluetooth.connected {
+    background-color: #5e81ac;
+}
+
 #battery {
     background-color: #bbccdd;
     color: #333333;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #333;
+    background-color: #a3be8c;
 }
 
 @keyframes blink {
@@ -147,7 +164,7 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #d08770;
+    background-color: #4c566a;
 }
 
 #pulseaudio {

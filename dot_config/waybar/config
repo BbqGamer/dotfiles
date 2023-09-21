@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["network#wired", "network#wireless", "cpu", "memory", "backlight", "wireplumber", "sway/language", "battery", "clock", "tray"],
+    "modules-center": ["sway/window", "clock"],
+    "modules-right": ["network#wired", "network#wireless", "cpu", "memory", "backlight", "wireplumber", "sway/language","bluetooth", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -46,11 +46,12 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
+        "interval": 5,
         "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{used} GB "
     },
     "temperature": {
         "critical-threshold": 80,
@@ -68,13 +69,16 @@
         "format-muted": " muted",
         "on-click": "qpwgraph"
     },
+    "bluetooth": {
+        "format": " {status} {device_alias}"
+    },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% ({time}) {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
