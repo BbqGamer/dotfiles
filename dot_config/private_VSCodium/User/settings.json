@@ -1,0 +1,15 @@
+{
+    "workbench.colorTheme": "Nord",
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 1,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-b>": false,
+        "<C-k>": false
+    },
+    "editor.fontFamily": "'RobotoMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "clangd.path": "/home/adam/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd"
+}
