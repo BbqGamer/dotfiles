@@ -6,7 +6,6 @@
         "sway/window"
     ],
     "modules-center": [
-        "clock"
     ],
     "modules-right": [
         "network#wired",
@@ -18,7 +17,8 @@
         "bluetooth",
         "sway/language",
         "battery",
-        "tray"
+        "tray",
+        "clock"
     ],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -89,15 +89,16 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "{ifname}",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "alacritty -e nmtui"
     },
     "network#wireless": {
-        "interface": "wlp2*",
+        "interface": "wlp*",
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "{ifname}",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "alacritty -e nmtui"
     },
     "custom/vpn": {
         "format": "󰖂 {}",
