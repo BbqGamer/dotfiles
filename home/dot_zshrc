@@ -33,6 +33,7 @@ alias calc='speedcrunch'
 alias cls='clear'
 alias kee='keepassxc-cli open /home/adam/passwords/adam-vault.kdbx'
 alias code='codium --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias cz='chezmoi'
 
 # Alias if you forget sudo for basic commands
 alias \
@@ -47,7 +48,8 @@ alias \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto"
+	ip="ip -color=auto" \
+	jq="jq -C"
 
 [[ -f $HOME/.config/aliases  ]] && source $HOME/.config/aliases
 
