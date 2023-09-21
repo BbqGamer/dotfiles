@@ -2,6 +2,9 @@ fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
+HISTFILE="$HOME/.cache/zsh_history"
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 export PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin
 
@@ -29,8 +32,6 @@ alias code='codium --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # Alias if you forget sudo for basic commands
 alias \
-	apt="sudo apt" \
-	pacman="sudo pacman" \
 	shutdown="sudo shutdown" \
 	reboot="sudo reboot" \
 	mount="sudo mount" \
@@ -44,6 +45,7 @@ alias \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto"
 
+[[ -f $HOME/.config/aliases  ]] && source $HOME/.config/aliases
 
 # plugins
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
