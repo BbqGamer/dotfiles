@@ -1,0 +1,9 @@
+EDITOR=code
+DIRECTORY=$(find ~/repos -maxdepth 1 -type d -not -path '*/.*' | fzf)
+
+if [ -z "$DIRECTORY" ]
+then
+    exit 1
+fi
+
+$EDITOR $DIRECTORY
