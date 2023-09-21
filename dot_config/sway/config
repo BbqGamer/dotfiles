@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment WAYLAND_DISPLAY
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -18,7 +21,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show drun | xargs swaymsg exec --
+set $menu wofi -i --show drun | xargs swaymsg exec --
 
 
 ### Output configuration
@@ -226,6 +229,8 @@ bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 bindsym $mod+n exec alacritty -e vim ~/notes/journal/$(date +%Y-%m-%d).md
 bindsym $mod+x exec window_switcher
 
+bindsym Mod1+tab workspace back_and_forth
+
 
 ## Appearance
 font pango:Roboto Mono NerdFont 11
@@ -249,7 +254,7 @@ set $aurora_green #a3be8c
 set $aurora_pink #b48ead
 
 # class                 border	backgr.	text	indica.	child_border
-client.focused		$polar_light  $frost_4  $storm_light $frost_4 $frost_4
+client.focused		$polar_light  $frost_4  $storm_light $aurora_green $frost_4
 client.focused_inactive	$polar_light $polar #888888 #000000 #000000
 client.unfocused	$polar_light $polar #ffffff #000000 #000000
 client.urgent		#ffffff #ffffff #000000 #ffffff #ffffff
