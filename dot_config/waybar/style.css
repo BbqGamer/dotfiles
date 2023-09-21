@@ -60,7 +60,6 @@ window#waybar.chromium {
 #cpu,
 #memory,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
 #custom-media,
@@ -100,8 +99,10 @@ window#waybar.chromium {
     background-color: #bbccdd;
 }
 
+#custom-vpn.disconnected,
 #bluetooth.off,
-#bluetooth.disabled {
+#bluetooth.disabled,
+#wireplumber.muted {
     background-color: #4c566a;	
 }
 
@@ -156,10 +157,6 @@ label:focus {
     background-color: #5e81ac;
 }
 
-#backlight {
-    background-color: #ebcb8b;
-}
-
 #network {
     background-color: #8fbcbb;
 }
@@ -170,26 +167,6 @@ label:focus {
 
 #network.disconnected {
     background-color: #4c566a;
-}
-
-#pulseaudio {
-    background-color: #bbccdd;
-    color: #333333;
-}
-
-#pulseaudio.muted {
-    background-color: #bbccdd;
-    color: #333333;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
 }
 
 #temperature {
@@ -204,32 +181,6 @@ label:focus {
     background-color: #2980b9;
 }
 
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
 #language {
     font-family: Helvetica, sans-serif;
     background: #bbccdd;
@@ -241,8 +192,4 @@ label:focus {
 
 #custom-vpn.connected {
     background-color: #A3BE8C;
-}
-
-#custom-vpn.disconnected {
-    background-color: #BF616A;
 }

@@ -1,76 +1,71 @@
 {
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["network#wired", "network#wireless", "custom/vpn", "cpu", "memory", "backlight", "wireplumber", "sway/language","bluetooth", "battery", "tray"],
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "custom/media",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network#wired",
+        "network#wireless",
+        "custom/vpn",
+        "cpu",
+        "memory",
+        "wireplumber",
+        "bluetooth",
+        "sway/language",
+        "battery",
+        "tray"
+    ],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         "spacing": 10
     },
     "clock": {
         "format": "{:%H:%M - %Y-%m-%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "interval": 5,
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "alacritty -e htop"
     },
     "memory": {
-        "format": "{used} GB "
+        "format": "{used} GB ",
+        "on-click": "alacritty -e htop"
     },
     "temperature": {
         "critical-threshold": 80,
-	"interval": 1,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input", 
+        "interval": 5,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["󱩱", "", ""]
+        "format-icons": [
+            "󱩱",
+            "",
+            ""
+        ]
     },
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": [
+            "",
+            ""
+        ]
     },
     "wireplumber": {
-        "format": " {volume}% {icon}",
-        "format-muted": " muted",
+        "format": " {volume}% ({node_name})",
+        "format-muted": " muted ({node_name})",
         "on-click": "qpwgraph"
     },
     "bluetooth": {
-        "format": " {status} {device_alias}"
+        "format": " {status} {device_alias}",
+        "on-click": "alacritty -e bluetoothctl"
     },
     "battery": {
         "states": {
@@ -81,14 +76,21 @@
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "network#wired": {
         "interface": "enp*",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "{ifname}",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "alacritty -e nmtui"
     },
     "network#wireless": {
         "interface": "wlp2*",
@@ -100,8 +102,9 @@
     "custom/vpn": {
         "format": "󰖂 {}",
         "exec": "~/.config/waybar/vpn_status.sh",
-        "interval": 1,
+        "interval": 30,
         "signal": 1,
-        "return-type": "json"
+        "return-type": "json",
+        "on-click": "vpn"
     }
 }
