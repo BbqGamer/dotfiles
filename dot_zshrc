@@ -1,26 +1,51 @@
-# Use powerline
-USE_POWERLINE="true"
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
 
-if [[ -e $HOME/.config/shell/zsh-config ]]; then
-  source $HOME/.config/shell/zsh-config
-fi
 
-if [[ -e $HOME/.config/shell/zsh-prompt ]]; then
-  source $HOME/.config/shell/zsh-prompt
-fi
+export PATH=/usr/local/bin:/usr/bin:/bin:~/.local/bin
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/adam/var/apps/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/adam/var/apps/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/adam/var/apps/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/adam/var/apps/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# Enable colors in man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-R
+
+# Ctrl+Arrows navigation
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
+# Simple aliases
+alias open=xdg-open
+alias manpy='f() { python3 -c "help($1)" };f'
+alias calc='speedcrunch'
+alias cls='clear'
+alias kee='keepassxc-cli open /home/adam/passwords/adam-vault.kdbx'
+alias code='codium --enable-features=UseOzonePlatform --ozone-platform=wayland'
+
+# Alias if you forget sudo for basic commands
+alias \
+	apt="sudo apt" \
+	pacman="sudo pacman" \
+	shutdown="sudo shutdown" \
+	reboot="sudo reboot" \
+	mount="sudo mount" \
+	umount="sudo umount" 
+
+# Activate coloring wherever you can
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+
+
+# plugins
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
