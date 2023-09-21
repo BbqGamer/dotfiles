@@ -2,10 +2,16 @@
 
 state=$(piactl get connectionstate)
 
+update_waybar() {
+  /bin/kill -SIGRTMIN+1 $(pgrep waybar)
+}
+
 if [[ "$state" == "Connected" ]]; then
   selection=$(echo -e "Disconnect\nChange region" | wofi -d -p "VPN - Private Internet Access action")
   if [[ "$selection" == "Disconnect" ]]; then
     piactl disconnect
+    sleep 6
+    update_waybar
   fi
   if [[ "$selection" == "Change region" ]]; then
     selected_region=$(piactl get regions | wofi -d -p "Select region to connect to")
@@ -17,6 +23,8 @@ if [[ "$state" == "Disconnected" ]]; then
   selection=$(echo -e "Connect\nChange region" | wofi -d -p "VPN - Private Internet Access action")
   if [[ "$selection" == "Connect" ]]; then
     piactl connect
+    sleep 6
+    update_waybar
   fi
   if [[ "$selection" == "Change region" ]]; then
     selected_region=$(piactl get regions | wofi -d -p "Select region to connect to")
