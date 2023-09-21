@@ -23,7 +23,7 @@ set $menu wofi --show drun | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg fill
+#output * bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg fill
 
 output DP4 position 0,0
 output eDP-1 position 2560,0
@@ -35,7 +35,7 @@ output eDP-1 position 2560,0
 # Example configuration:
 #
 
-set $lock_bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg
+#set $lock_bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg
 set $lock swaylock -f -i $lock_bg
 set $suspend systemctl suspend
 
@@ -209,8 +209,8 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # Brightnes control (requires brighnessctl)
-bindsym XF86MonBrightnessUp exec brightnessctl s 350+
-bindsym XF86MonBrightnessDown exec brightnessctl s 350-
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Screenshots (requires grim, slurp and wl-clipboard)
 bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
