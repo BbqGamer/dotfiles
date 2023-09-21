@@ -8,7 +8,7 @@
 
 window#waybar {
     background-color: #2e3440;
-    border-bottom: 3px solid #434c5e;
+    border-bottom: 2px solid #434c5e;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -52,8 +52,7 @@ window#waybar.chromium {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #ebcb8b;
 }
 
 #clock,
@@ -70,6 +69,7 @@ window#waybar.chromium {
 #idle_inhibitor,
 #wireplumber,
 #bluetooth,
+#custom-vpn,
 #mpd {
     padding: 0 10px;
     margin: 6px 2px; 
@@ -92,6 +92,7 @@ window#waybar.chromium {
 }
 
 #clock {
+    font-weight: bold;
     background-color: #bbccdd;
 }
 
@@ -160,7 +161,11 @@ label:focus {
 }
 
 #network {
-    background-color: #bbccdd;
+    background-color: #8fbcbb;
+}
+
+#network.linked {
+    background-color: #ebcb8b;
 }
 
 #network.disconnected {
@@ -229,7 +234,15 @@ label:focus {
     font-family: Helvetica, sans-serif;
     background: #bbccdd;
     color: #333333;
-    padding: 0 5px;
+    padding: 0 3px;
     margin: 6px 3px;
     min-width: 16px;
+}
+
+#custom-vpn.connected {
+    background-color: #A3BE8C;
+}
+
+#custom-vpn.disconnected {
+    background-color: #BF616A;
 }

@@ -228,6 +228,7 @@ bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 # Personal
 bindsym $mod+n exec alacritty -e vim ~/notes/journal/$(date +%Y-%m-%d).md
 bindsym $mod+x exec window_switcher
+bindsym $mod+p exec vpn
 
 bindsym Mod1+tab workspace back_and_forth
 

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+state=$(piactl get connectionstate)
+
+if [[ "$state" == "Connected" ]]; then
+  selection=$(echo -e "Disconnect\nChange region" | wofi -d -p "VPN - Private Internet Access action")
+  if [[ "$selection" == "Disconnect" ]]; then
+    piactl disconnect
+  fi
+  if [[ "$selection" == "Change region" ]]; then
+    selected_region=$(piactl get regions | wofi -d -p "Select region to connect to")
+    piactl set region $selected_region
+  fi
+fi
+
+if [[ "$state" == "Disconnected" ]]; then
+  selection=$(echo -e "Connect\nChange region" | wofi -d -p "VPN - Private Internet Access action")
+  if [[ "$selection" == "Connect" ]]; then
+    piactl connect
+  fi
+  if [[ "$selection" == "Change region" ]]; then
+    selected_region=$(piactl get regions | wofi -d -p "Select region to connect to")
+    piactl set region $selected_region
+  fi
+fi

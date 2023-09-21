@@ -1,7 +1,7 @@
 {
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["sway/window", "clock"],
-    "modules-right": ["network#wired", "network#wireless", "cpu", "memory", "backlight", "wireplumber", "sway/language","bluetooth", "battery", "tray"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["network#wired", "network#wireless", "custom/vpn", "cpu", "memory", "backlight", "wireplumber", "sway/language","bluetooth", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -42,7 +42,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%H:%M %Y-%m-%d}",
+        "format": "{:%H:%M - %Y-%m-%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
@@ -85,16 +85,23 @@
     },
     "network#wired": {
         "interface": "enp*",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "{ifname} disconnected",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "{ifname}",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "network#wireless": {
         "interface": "wlp2*",
-        "format-wifi": "{ipaddr} {essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ({signalStrength}%) ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "{ifname} disconnected",
+        "format-disconnected": "{ifname}",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "custom/vpn": {
+        "format": "󰖂 {}",
+        "exec": "~/.config/waybar/vpn_status.sh",
+        "interval": 1,
+        "signal": 1,
+        "return-type": "json"
     }
 }
