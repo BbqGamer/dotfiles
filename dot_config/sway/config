@@ -23,7 +23,7 @@ set $menu wofi --show drun | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
 
 output DP4 position 0,0
 output eDP-1 position 2560,0
@@ -35,7 +35,7 @@ output eDP-1 position 2560,0
 # Example configuration:
 #
 
-#set $lock_bg ~/media/pictures/wallpapers/adam-jang-MLKrf51NV8w-unsplash.jpg
+set $lock_bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png
 set $lock swaylock -f -i $lock_bg
 set $suspend systemctl suspend
 
