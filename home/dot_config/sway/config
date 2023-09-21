@@ -4,6 +4,8 @@
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment WAYLAND_DISPLAY
 
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec echo "power off" | bluetoothctl
 
 ### Variables
@@ -14,9 +16,8 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu wofi -i --show drun | xargs swaymsg exec --
+set $menu fuzzel | xargs swaymsg exec --
 
 include $HOME/.config/sway/config.d/*
 
 include /etc/sway/config.d/*
-
