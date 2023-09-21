@@ -212,6 +212,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Brightnes control (requires brighnessctl)
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
@@ -219,12 +220,48 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 # Screenshots (requires grim, slurp and wl-clipboard)
 bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
-#
+
+# Personal
+bindsym $mod+n exec alacritty -e vim ~/notes/journal/$(date +%Y-%m-%d).md
+bindsym $mod+x exec window_switcher
+
+
+## Appearance
+font pango:Roboto Mono NerdFont 11
+
+# Nord colors
+set $polar_dark #2e3440
+set $polar #3b4252
+set $polar_medium #434c5e
+set $polar_light #4c566a
+set $storm_high #d8dee9
+set $storm #e5e9f0
+set $storm_light #eceff4
+set $frost_1 #8fbcbb
+set $frost_2 #88c0d0
+set $frost_3 #81a1c1
+set $frost_4 #5e81ac
+set $aurora_red #bf616a
+set $aurora_orange #d08770
+set $aurora_yellow #ebcb8b
+set $aurora_green #a3be8c
+set $aurora_pink #b48ead
+
+# class                 border	backgr.	text	indica.	child_border
+client.focused		$polar_light  $frost_4  $storm_light $aurora_green $frost_4
+client.focused_inactive	$polar_light $polar #888888 #000000 #000000
+client.unfocused	$polar_light $polar #ffffff #000000 #000000
+client.urgent		#ffffff #ffffff #000000 #ffffff #ffffff
+client.placeholder	#000000 #000000 #ffffff #000000 #000000
+client.background		#2e3440
+
+
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    status_command i3status
+    #status_command i3status
+    swaybar_command waybar
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
