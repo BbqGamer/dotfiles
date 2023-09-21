@@ -4,6 +4,8 @@
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment WAYLAND_DISPLAY
 
+exec echo "power off" | bluetoothctl
+
 ### Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -17,3 +19,4 @@ set $menu wofi -i --show drun | xargs swaymsg exec --
 include $HOME/.config/sway/config.d/*
 
 include /etc/sway/config.d/*
+
