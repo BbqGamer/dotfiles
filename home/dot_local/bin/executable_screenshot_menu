@@ -1,0 +1,19 @@
+#!/bin/bash
+
+options=("Select + Edit + Copy" "Sleep + Select + Edit + Copy" "Cancel")
+selected_option=$(printf "%s\n" "${options[@]}" | fuzzel --dmenu)
+
+select_edit_copy () {
+    grim -g "$(slurp)" -t png - | swappy -f - -o - | wl-copy -t image/png
+}
+
+case "$selected_option" in
+    "Select + Edit + Copy")
+        select_edit_copy
+        ;;
+    "Sleep + Select + Edit + Copy")
+        sleep 2 && select_edit_copy    
+        ;;
+    *)
+        ;;
+esac

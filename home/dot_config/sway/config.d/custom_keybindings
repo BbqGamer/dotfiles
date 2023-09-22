@@ -8,8 +8,9 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
-# Screenshots (requires grim, slurp and wl-clipboard)
+# Screenshots (requires grim, slurp, swappy and wl-clipboard)
 bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+bindsym $mod+Print exec screenshot_menu 
 
 # Personal
 bindsym $mod+n exec alacritty -e vim ~/notes/journal/$(date +%Y-%m-%d).md
