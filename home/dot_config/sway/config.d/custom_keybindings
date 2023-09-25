@@ -1,13 +1,12 @@
-# Volume control
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioMute exec amixer set Master toggle
+# Volume control (requires wob being setup)
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' > $WOBSOCK
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # Brightnes control (requires brighnessctl)
-bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
 # Screenshots (requires grim, slurp, swappy and wl-clipboard)
 bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 bindsym $mod+Print exec screenshot_menu 
