@@ -5,6 +5,12 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if !isdirectory(expand('~/.vim/pack/vim-wayland-clipboard'))
+  silent! call mkdir(expand('~/vim/pack/vim-wayland-clipboard/start/'), 'p') 
+  echo 'Installing vim-wayland-clipboard...'
+  silent! execute '!git clone https://github.com/jasonccox/vim-wayland-clipboard.git ~/.vim/pack/vim-wayland-clipboard/start/vim-wayland-clipboard'
+endif
+
 " load plugins
 call plug#begin(expand('~/.vim/plugged'))
 Plug 'arcticicestudio/nord-vim'
@@ -13,14 +19,12 @@ call plug#end()
 
 colorscheme nord
 
-" allow yanking to and pasting from clipboard
-vnoremap <C-c> "+y
-map <C-v> "+P
+map <C-c> "+y
+map <C-v> "+p
 
 " Nerd tree keymaps
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " turn hybrid line numbers on
@@ -28,3 +32,4 @@ nnoremap <C-f> :NERDTreeFind<CR>
 :set nu rnu
 
 syntax on
+
