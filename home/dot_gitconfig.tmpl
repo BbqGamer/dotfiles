@@ -6,3 +6,8 @@
 	excludesfile = ~/.config/git/gitignore
 [credential]
 	helper = cache
+[alias]
+	c = commit -v
+	s = status
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
