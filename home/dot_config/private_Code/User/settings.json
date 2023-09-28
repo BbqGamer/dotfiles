@@ -1,0 +1,62 @@
+{
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false,
+        "c": true,
+        "python": true,
+        "java": true,
+        "cpp": true,
+        "rust": true,
+        "awk": true
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "workbench.colorTheme": "Nord",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    "editor.fontFamily": "'Roboto Mono', 'Droid Sans Mono','Fira Code', monospace",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
+    "extensions.ignoreRecommendations": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSave": true
+    },
+    "open-in-browser.default": "firefox",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "mypy.enabled": false,
+    "python.analysis.ignore": [
+        "/home/adam/dev/NCLM/NCLM_Reporting_Issues_Tool_Old/issues_tool/reports/xlsx_writer.py"
+    ],
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-b>": false,
+        "<C-k>": false,
+        "<C-p>": false
+    },
+    "vim.useSystemClipboard": true,
+    "gitlens.plusFeatures.enabled": false,
+    "editor.formatOnSave": true
+}
