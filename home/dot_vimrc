@@ -15,17 +15,38 @@ endif
 call plug#begin(expand('~/.vim/plugged'))
 Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
+Plug 'ledger/vim-ledger'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'maxboisvert/vim-simple-complete'
+Plug 'LunarWatcher/auto-pairs'
+Plug 'tpope/vim-fugitive'
 call plug#end()
+
+nnoremap <C-p> <Nop>
+let mapleader = " "
 
 colorscheme nord
 
 map <C-c> "+y
 map <C-v> "+p
 
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
 " Nerd tree keymaps
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+
+" Quickfix
+nnoremap <leader>q :copen<CR>
 
 " turn hybrid line numbers on
 :set number relativenumber
