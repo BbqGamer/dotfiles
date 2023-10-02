@@ -1,13 +1,6 @@
 # dotfiles
+These are dotfiles I use.
+Managed with [chezmoi](https://www.chezmoi.io/)
 
-### ZSH
-I am **not** using *oh-my-zsh*, clone theme and plugins manually.
-```
-mkdir -p ~/.zsh
-git clone https://github.com/sindresorhus/pure.git
-git clone https://github.com/zsh-users/zsh-autosuggestions.git
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-```
-
-Also remember to set shell for your user
+Remember to install and change shell for your user to zsh
 `chsh --shell /bin/zsh [USER]`
