@@ -27,6 +27,6 @@ client.background       #2e3440
 
 
 bar {
-    swaybar_command waybar
+    status_command i3status
     position top
 }
