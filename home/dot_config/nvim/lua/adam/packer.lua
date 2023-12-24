@@ -46,4 +46,8 @@ return require('packer').startup(function(use)
   use('christoomey/vim-tmux-navigator')
 
   use('github/copilot.vim')
+
+  use('mfussenegger/nvim-dap')
+  use('mfussenegger/nvim-dap-python')
+
 end)
