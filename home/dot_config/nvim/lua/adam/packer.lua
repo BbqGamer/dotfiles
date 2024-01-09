@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'shaunsingh/nord.nvim',
+	  'arcticicestudio/nord-vim',
 	  config = function()
 		  vim.cmd('colorscheme nord')
 	  end
