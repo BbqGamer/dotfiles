@@ -25,7 +25,7 @@ client.urgent           #ffffff      #ffffff  #000000      #ffffff       #ffffff
 client.placeholder      #000000      #000000  #ffffff      #000000       #000000
 client.background       #2e3440
 
-default_border none
+default_border pixel
 
 bar {
     status_command i3status
