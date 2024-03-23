@@ -1,8 +1,0 @@
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-set $background ~/media/photos/wallpapers/ice.jpg
-#output * bg $background fill
-output * bg #000000 solid_color
-
-output DP-5 position 0,0
-output eDP-1 position 2560,300
-
